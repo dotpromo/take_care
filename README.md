@@ -1,8 +1,8 @@
 # TakeCare
 
-Sidekiq wrapper for activerecord model
+Sidekiq wrapper for activerecord model (or any class which instances are fetched by #id)
 
-Method #take_care(method, *args) that delegates actual performing to sidekiq
+Method #take_care(method, *args) that delegates actual performing of own method to sidekiq
 
 ## Installation
 
