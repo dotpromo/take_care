@@ -2,7 +2,7 @@
 
 Sidekiq wrapper for activerecord model
 
-Method #take_care(method) that delegates actual performing to sidekiq
+Method #take_care(method, *args) that delegates actual performing to sidekiq
 
 ## Installation
 
@@ -24,6 +24,8 @@ Include TakeCare::Reliable into your model and you will get #take_care method in
 
 ```rb
 class Human < ActiveRecord::Base
+  include TakeCare::Reliable
+
   def hard_work(box1, box2)
     # Code that needs to be executed in background
   end
