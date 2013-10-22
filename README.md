@@ -1,6 +1,8 @@
 # TakeCare
 
-TODO: Write a gem description
+Sidekiq wrapper for activerecord model
+
+Method #take_care(method) that delegates actual performing to sidekiq
 
 ## Installation
 
@@ -18,7 +20,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Include TakeCare::Reliable into your model and you will get #take_care method inside of it.
+
+```rb
+class Human < ActiveRecord::Base
+  def hard_work(box1, box2)
+    # Code that needs to be executed in background
+  end
+end
+
+human = Human.create(name: 'Alex')
+
+human.take_care :hard_work, 'heavy box', 'second heavy box' # This goes to sidekiq
+
+```
 
 ## Contributing
 
