@@ -35,6 +35,9 @@ human = Human.create(name: 'Alex')
 
 human.take_care :hard_work, 'heavy box', 'second heavy box' # This goes to sidekiq
 
+# Or the same using alias
+human.take_care_of :hard_work, 'heavy box', 'second heavy box' # This goes to sidekiq
+
 ```
 
 ## Contributing
