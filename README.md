@@ -35,8 +35,12 @@ human = Human.create(name: 'Alex')
 
 human.take_care :hard_work, 'heavy box', 'second heavy box' # This goes to sidekiq
 
-# Or the same using alias
-human.take_care_of :hard_work, 'heavy box', 'second heavy box' # This goes to sidekiq
+human.take_care_of :hard_work, 'heavy box', 'second heavy box' # Same using alias
+
+# Same using dynamic methods (method is defined after first call)
+human.take_care_hard_work 'heavy box', 'second heavy box'
+# Or
+human.take_care_of_hard_work 'heavy box', 'second heavy box'
 
 ```
 
